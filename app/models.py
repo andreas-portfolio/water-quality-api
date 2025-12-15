@@ -19,7 +19,7 @@ class Reading(Base):
     
     id = Column(Integer, primary_key=True)
     sensor_id = Column(Integer, ForeignKey("sensors.id"))
-    timestamp = Column(DateTime)
+    timestamp = Column(DateTime(timezone=True), server_default=func.now())
     value = Column(Float)
     unit = Column(String)
     

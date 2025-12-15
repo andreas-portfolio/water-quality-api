@@ -20,6 +20,20 @@ services:
       DATABASE_URL: postgresql://testuser:testpass@db:5432/testdb
     ports:
       - "8000:8000"
+  
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: water-quality-api-mosquitto
+    volumes:
+    - ./mosquitto/config:/mosquitto/config
+    - ./mosquitto/data:/mosquitto/data
+    - ./mosquitto/log:/mosquitto/log
+    ports:
+      - "1883:1883"
+      - "9001:9001"
 
 volumes:
   db-data:
+  mosquitto-config:
+  mosquitto-data:
+  mosquitto-log:
