@@ -57,3 +57,38 @@
 **Energy**: [1/5] - what a day
 
 **Next**: Day 3 - MQTT integration, sensor data ingestion
+
+### Project 2 - Day 3 (Monday)
+**Goal**: MQTT integration - real-time sensor data ingestion
+
+**Completed**:
+- Added Mosquitto MQTT broker to docker-compose
+- Created MQTT listener service (subscribed to sensor topics)
+- Built sensor simulator (publishes random data every 5 seconds)
+- Integrated listener with FastAPI lifespan
+- Added readings CRUD endpoints (GET with filters, POST)
+- Full pipeline working: Simulator → MQTT → Listener → Database → API
+
+**What I learned**:
+- MQTT pub/sub architecture (topics, wildcards)
+- Paho MQTT client (on_connect, on_message callbacks)
+- Callback-based programming patterns
+- Background service integration with FastAPI
+- Multi-service Docker orchestration
+- Time-series data ingestion patterns
+- Query parameter filtering in FastAPI
+
+**Challenges**:
+- Understanding on_message callback implementation
+- Couldn't test mqtt_listener.py in isolation
+- Debugging through Docker logs instead of direct execution
+- Complexity overwhelming
+
+**Design flaws**:
+- Sensor type validation: currently sensor.sensor_type isn't enforced
+- Temperature sensor can receive pH readings (shouldn't be possible)
+- Would need validation logic or database constraints in production
+
+**Energy**: 1/5 by end - mentally exhausting day
+
+**Next**: Day 4 (Tuesday) - Authentication & API Enhancement
