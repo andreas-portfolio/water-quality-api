@@ -92,3 +92,32 @@
 **Energy**: 1/5 by end - mentally exhausting day
 
 **Next**: Day 4 (Tuesday) - Authentication & API Enhancement
+
+### Project 2 - Day 4 (Tuesday)
+**Goal**: Authentication and API enhancement
+
+**Completed**:
+- JWT authentication with python-jose and passlib
+- User model and registration endpoint
+- Login endpoint (OAuth2 password flow)
+- Protected endpoints (require Bearer token)
+- Sensor statistics endpoint (avg, min, max, count)
+- Hourly aggregation endpoint (time-series grouping)
+
+**What I learned**:
+- JWT token creation and validation
+- Password hashing with bcrypt
+- FastAPI security dependencies (HTTPBearer)
+- OAuth2PasswordRequestForm for login
+- SQLAlchemy aggregation functions (func.avg, func.min, func.max)
+- Date/time filtering and grouping (date_trunc)
+- Bearer token authentication flow
+
+**Challenges**:
+- Password verification using wrong variable (User vs user)
+- Understanding when current_user dependency validates (before function runs)
+- Complex SQLAlchemy queries for aggregations
+
+**Energy**: Started 3/5, ended 1/5
+
+**Next**: Day 5 (Wednesday) - Testing & Documentation
